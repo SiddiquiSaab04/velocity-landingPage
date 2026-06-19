@@ -37,12 +37,28 @@ function Index() {
         opacity: 0,
         scrollTrigger: { trigger: ".s1", start: "top top", end: "bottom top", scrub: true },
       });
+      // Premium Entrance
       gsap.fromTo(".hero-shoe",
-        { scale: 1, rotate: -8, yPercent: 0 },
-        {
-          scale: 2.4, rotate: 12, yPercent: 30,
-          scrollTrigger: { trigger: ".s1", start: "top top", end: "bottom top", scrub: 1 },
-        });
+        { scale: 0.85, rotationZ: -15, rotationX: 15, opacity: 0, filter: "blur(15px)" },
+        { scale: 1, rotationZ: -8, rotationX: 0, opacity: 1, filter: "blur(0px)", duration: 2.5, ease: "power4.out" }
+      );
+
+      // Upgraded 3D Cinematic Scroll Parallax
+      gsap.to(".hero-shoe", {
+        scale: 3, 
+        rotationZ: 18, 
+        rotationX: 25,
+        rotationY: -20,
+        yPercent: 45,
+        xPercent: 15,
+        filter: "drop-shadow(0px 100px 200px rgba(0, 255, 255, 0.8))",
+        scrollTrigger: { 
+          trigger: ".s1", 
+          start: "top top", 
+          end: "bottom top", 
+          scrub: 1.5 
+        },
+      });
       gsap.to(".hero-aurora", {
         scale: 1.4, rotate: 30,
         scrollTrigger: { trigger: ".s1", start: "top top", end: "bottom top", scrub: true },
